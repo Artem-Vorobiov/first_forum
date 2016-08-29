@@ -87,3 +87,21 @@ font-family: 'Lato', sans-serif;
 		}
 	}
 }
+
+#post_content {
+  background: white;
+  padding: 2em 5%;
+  border-radius: .5em;
+  h2{
+    font-weight: 100;
+    font-size: 2em;
+    color:#397CAC;
+    margin-top: 0px;
+  }
+  p{
+    color: #b2baca;
+    font-size: .9rem;
+    font-weight: 100;
+    line-height: 1.5;
+  }
+}

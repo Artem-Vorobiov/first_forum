@@ -1,6 +1,4 @@
-%h1 Haml form
-
 = simple_form_for @post do |f|
-	= f.input :title
-	= f.input :content
-	= f.submit
+  = f.input :title, class: "form_title"
+  = f.input :content, class: "form_descr"
+  = f.submit

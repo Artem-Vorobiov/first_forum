@@ -90,6 +90,18 @@ font-family: 'Lato', sans-serif;
 	}
 }
 
+hr{
+  border: 1px solid #d1d1d1;
+}
+.button {
+  color: #397CAC;
+  border:1px solid #397CAC;
+  padding: .5em 1em;
+  border-radius: 0.2em;
+  text-decoration: none;
+  margin-right: .5%;
+}
+
 #post_content {
   background: white;
   padding: 2em 5%;
@@ -105,5 +117,122 @@ font-family: 'Lato', sans-serif;
     font-size: .9rem;
     font-weight: 100;
     line-height: 1.5;
+  }
+  #comments{
+    .comment{
+      border-bottom:1px solid #d1d1d1;
+      padding-bottom: 1em;
+      margin-bottom: 1em;
+        .content{
+          float: left;
+          width: 70%;
+        }
+        .buttons{
+          float:left;
+          width: 30%;
+          font-size: .8em;
+          text-align: right;
+          padding-top: 1.5em;
+          a{
+            color: #397CAC;
+            border:1px solid #397CAC;
+            padding: .5em 1em;
+            border-radius: 0.2em;
+            text-decoration: none;
+            margin-right: 2%;
+          }
+        }
+        .comment_content{
+          margin:0px;
+          padding:0px;
+        }
+        .comment_author{
+          color:#397CAC;
+          margin-top: .5rem;
+          font-size: .6em;
+          font-weight: 700;
+        }
+    }
+    input[type='submit']{
+      background:#397CAC;
+      border:none;
+      color:white;
+      font-weight: 100;
+      padding: .5em 1em;
+      border-radius: .2em;
+      
+    }
+    textarea{
+      width: 100%;
+      min-height: 200px;
+      border: 1px solid #d1d1d1;
+      border-radius: .2em;
+      margin: 1em 0;
+    }
+  }
+}
+#comments {
+  color:#397CAC;
+}
+#form_container{
+  color: #397CAC;
+  width: 85%;
+  background:white;
+  padding: 1em;
+  border: 2px solid white;
+  border-radius: 1em;
+  .post_title{
+    margin: .5em;
+    input{
+      width:90%;
+      border: 1px solid #d1d1d1;
+      border-radius: .4em;
+    }
+  }
+  .post_content{
+    margin: .5em;
+    textarea{
+      width: 90%;
+      border: 1px solid #d1d1d1;
+    }
+  }
+  label{
+    display:block;
+  }
+  input[type="submit"], .link_back{
+    color: #397CAC;
+    border:1px solid #397CAC;
+    padding: .5em 1em;
+    border-radius: 0.2em;
+    text-decoration: none;
+  }
+}
+
+
+//----- Edit Comments
+
+#edit_comment_form{
+  background: white;
+  width: 100%;
+  padding: .5em;
+  color: #397CAC;
+  border: 2px solid white;
+  border-radius: 1em;
+  label {
+    display: block;
+    padding: .2em 0;
+  }
+  textarea {
+    width:95%;
+    min-height: 100px;
+    margin-bottom: .3em;
+  }
+  input[type="submit"], .link_cancel{
+    color: #397CAC;
+    border:1px solid #397CAC;
+    padding: .5em 1em;
+    border-radius: 0.2em;
+    text-decoration: none;
+    background:white;
   }
 }

@@ -12,6 +12,7 @@
   %hr/
   %br/
   
-  =link_to 'Edit', edit_post_path(@post), class: "button"
-  =link_to 'Delete', post_path(@post), method: :Delete, data: {confirm: 'Are you sure?'}, class: "button"
-  =link_to 'Home', root_path, class: "button"
+  - if user_signed_in?
+    =link_to 'Edit', edit_post_path(@post), class: "button"
+    =link_to 'Delete', post_path(@post), method: :Delete, data: {confirm: 'Are you sure?'}, class: "button"
+    =link_to 'Home', root_path, class: "button"

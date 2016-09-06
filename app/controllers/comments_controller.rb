@@ -3,39 +3,44 @@ class CommentsController < ApplicationController
 
 
   def create
-    @post=Post.find(params[:post_id])
-    @comment=@post.comments.create(params[:comment].permit(:comment))
-    @comment.user_id = current_user.id if current_user
+    @post=Post.find(permited_params[:post_id])
+    @comment=@post.comments.create(permited_params[:comment])
+    @comment.user = current_user if current_user
 
-    if @comment.save
+    if @comment.save!
       redirect_to post_path(@post)
     else
     end
   end
 
   def edit
-    @post=Post.find(params[:post_id])
-    @comment=@post.comments.find(params[:id])
-    @comment.user_id = current_user.id if current_user
+    post
   end
 
   def update
-    @post=Post.find(params[:post_id])
-    @comment=@post.comments.find(params[:id])
-    @comment.user_id = current_user.id if current_user
-    if @comment.update(params[:comment].permit(:comment))
-      redirect_to post_path(@post)
+    # post
+    if comment.update(params[:comment].permit(:comment))
+      redirect_to post_path(post)
     else
       render 'edit'
     end
   end
 
   def destroy
-    @post=Post.find(params[:post_id])
-    @comment=@post.comments.find(params[:id])
-    @comment.user_id = current_user.id if current_user
-
-    @comment.destroy
+    comment.destroy
     redirect_to post_path(@post)
+  end
+
+  private
+  def permited_params
+    params.permit(:id, :post_id, :comment)
+  end
+
+  def comment
+    @comment= Comment.find(permited_params[:id])
+  end
+
+  def post
+    @post = comment.post
   end
 end
